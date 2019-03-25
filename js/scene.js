@@ -29,9 +29,9 @@ function setup()
   channelSelect.position(440,60);
   channelSelect.mouseClicked(changeChannel);
 
-  var channel = createMixerChannel ("Synth", 20, 300, defaultnotes, 0, 3); // Synth
+  var channel = createMixerChannel ("Synth", 20, 300, defaultnotes, 0); // Synth
   desk.push(channel);
-  var channel2 = createMixerChannel ("Bass", 200, 300, defaultnotes, 0, 4); // Synth
+  var channel2 = createMixerChannel ("Bass", 200, 300, defaultnotes, 0); // Synth
   desk.push(channel2);
   var channel3 = createMixerChannel ("Sampler One", 380, 300, defaultnotes, 1, 1); // Sampler
   desk.push(channel3);

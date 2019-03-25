@@ -44,6 +44,15 @@ function setup()
   desk[3].autoSlider.mouseClicked(changeOctaves);
 }
 
+function setPanPosition(panPosition)
+{
+  for (var k=0; k<this.numberofNotes; k++)
+{
+        this.notes[k].synthpan.pan.value = panPosition;
+
+    }
+}
+
 function draw()
 {
   background(50, 50, 50);
@@ -56,7 +65,14 @@ function draw()
   }
   fill(255, 255, 255);
 
+  desk[0].audio.setPanPosition(desk[0].panSlider.value());
+  desk[1].audio.setPanPosition(desk[1].panSlider.value());
+  desk[2].audio.setPanPosition(desk[2].panSlider.value());
+  desk[3].audio.setPanPosition(desk[3].panSlider.value());
+
 }
+
+
 
 function mousePressed()
 {
@@ -114,7 +130,9 @@ function createMixerChannel(name, x, y, numbernotes, channeltype, audiofile)
 
 	fill (0,0,0); //black
 	channel.volumeSlider.position(channel.chanx, channel.chany);
+  text("Volume", 200, 200);
 	channel.panSlider.position(channel.chanx,channel.chany+50);
+  text("Panning", 200, 200);
 	channel.autoSlider.position(channel.chanx,channel.chany+100);
 	fill (255,255,255); //white
 

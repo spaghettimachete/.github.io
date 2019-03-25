@@ -109,7 +109,8 @@ function createMixerChannel(name, x, y, numbernotes, channeltype, audiofile)
         volumeSlider: createSlider(0, 100, 0),
         panSlider: createSlider(-1, 1, 0, 0.01),
         autoSlider: createSlider(0, 4, 0),
-        audio: createAudioSource(numbernotes, channeltype, audiofile)
+        audio: createAudioSource(numbernotes, channeltype, audiofile),
+        audiofile: audiofile
     }
 
 	fill (0,0,0); //black

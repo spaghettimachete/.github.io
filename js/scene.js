@@ -98,7 +98,7 @@ function mouseReleased()
     clicked = null;
 }
 
-function createMixerChannel(name, x, y, numbernotes, channeltype, soundtype)
+function createMixerChannel(name, x, y, numbernotes, channeltype, audiofile)
 {
     let channel = {
         name: name,
@@ -109,7 +109,7 @@ function createMixerChannel(name, x, y, numbernotes, channeltype, soundtype)
         volumeSlider: createSlider(0, 100, 0),
         panSlider: createSlider(-1, 1, 0, 0.01),
         autoSlider: createSlider(0, 4, 0),
-        audio: createAudioSource(numbernotes, channeltype, soundtype),
+        audio: createAudioSource(numbernotes, channeltype, audiofile),
     }
 
 	fill (0,0,0); //black

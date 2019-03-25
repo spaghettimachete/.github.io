@@ -29,9 +29,9 @@ function setup()
   channelSelect.position(440,60);
   channelSelect.mouseClicked(changeChannel);
 
-  var channel = createMixerChannel ("Synth", 20, 300, defaultnotes, 0, 1); // Synth
+  var channel = createMixerChannel ("Synth", 20, 300, defaultnotes, 0, 3); // Synth
   desk.push(channel);
-  var channel2 = createMixerChannel ("Bass", 200, 300, defaultnotes, 0, 2); // Synth
+  var channel2 = createMixerChannel ("Bass", 200, 300, defaultnotes, 0, 4); // Synth
   desk.push(channel2);
   var channel3 = createMixerChannel ("Sampler One", 380, 300, defaultnotes, 1, 1); // Sampler
   desk.push(channel3);
@@ -98,7 +98,7 @@ function mouseReleased()
     clicked = null;
 }
 
-function createMixerChannel(name, x, y, numbernotes, channeltype, audiofile)
+function createMixerChannel(name, x, y, numbernotes, channeltype, soundtype)
 {
     let channel = {
         name: name,
@@ -109,7 +109,7 @@ function createMixerChannel(name, x, y, numbernotes, channeltype, audiofile)
         volumeSlider: createSlider(0, 100, 0),
         panSlider: createSlider(-1, 1, 0, 0.01),
         autoSlider: createSlider(0, 4, 0),
-        audio: createAudioSource(numbernotes, channeltype, audiofile),
+        audio: createAudioSource(numbernotes, channeltype, soundtype),
     }
 
 	fill (0,0,0); //black
